@@ -16,17 +16,16 @@ const routes: Routes=[
       {path:'search', component:SearchPageComponent},
       {path:'edit/:id', component:NewPageComponent},
       {path:'list', component:ListPageComponent},
+      // Esta tiene que ir la ultima (sin contar el comodin)
       {path:':id', component:HeroPageComponent},
       {path:'**', redirectTo:'list'},
-
-
     ]
   }
 ];
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
+
 export class HeroesRoutingModule { }
