@@ -1,1 +1,10 @@
-<p>layout-page works!</p>
+<!-- {9.2} Creacion de grid con padding 3 -->
+<div class="grid">
+  <!-- {9.2} 12 columnas con margin top 5,
+   si la pantalla es mediana,
+   6 columnas con un espacio de 3 columnas y margin top 8
+    -->
+    <div class="col-12 mt-5 md:col-6 md:col-offset-3 md:mt-8">
+    <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,2 +1,54 @@
-<p>layout-page works!</p>
-<router-outlet></router-outlet>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push" [ngStyle]="{width:'250px'}">
+    <mat-toolbar color="warn">
+      <span>Menú</span>
+      <span class="spacer"></span>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar>
+
+  <mat-nav-list>
+        <!-- Definimos el enlace y la accion de esconder el menu -->
+        <mat-list-item>
+          <mat-icon matListItemIcon>
+            save
+          </mat-icon>
+          guardar
+        </mat-list-item>
+
+  <!-- Cambios para T9.1 -->
+
+        <!-- Vamos a usar un ngFor para iterar sobre el array -->
+         <mat-list-item *ngFor="let botones of sidebarItems"
+         [routerLink]="botones.url" routerLinkActive="active"
+         (click)="sidenav.toggle()">
+         <mat-icon matListItemIcon>
+          {{botones.icon}}
+         </mat-icon>
+         <span matListItemTitle>
+          {{botones.label}}
+         </span>
+        </mat-list-item>
+
+  <!-- Cambios para T9.1 -->
+
+</mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>
+        menu
+      </mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <button mat-button>
+      Logout
+    </button>
+  </mat-toolbar>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>
