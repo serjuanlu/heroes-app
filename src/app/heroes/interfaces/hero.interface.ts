@@ -5,10 +5,12 @@ publisher: Publisher;
 alter_ego: string;
 first_appearance: string;
 characters: string;
+// agregamos la imagen
+alt_img?:string;
 }
 
 export enum Publisher{
   DCComics = 'DC Comics',
   MarvelComics = 'Marvel Comics',
-  ImageComics = 'Image Comics'
+  ImageComics = 'Image Comics' //He agregado Image Comics
 }

@@ -166,6 +166,23 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
+    },
+    {
+      "id": "image-invincible",
+      "superhero": "Invincible",
+      "publisher": "Image Comics",
+      "alter_ego": "Mark Grayson",
+      "first_appearance": "Invincible #1",
+      "characters": "Mark Grayson, Zandale Randolph"
+    },
+    {
+      "id": "-unahHV",
+      "superhero": "DeadPool",
+      "publisher": "Marvel Comics",
+      "alter_ego": "Wade Wilson",
+      "first_appearance": "New Mutants #98",
+      "characters": "Wade Wilson",
+      "alt_img": "https://i.imgur.com/xPMbNra.jpeg"
     }
   ]
 }
