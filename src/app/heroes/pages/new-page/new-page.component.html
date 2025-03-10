@@ -1,1 +1,104 @@
-<p>new-page works!</p>
+<button mat-fab extended [routerLink]="['/heroes']">
+  <mat-icon>arrow_back</mat-icon>
+  Volver a heroes
+</button>
+<h1>
+  {{currentHero.id?'Editar':'Añadir'}}
+ Heroe
+  <small>{{currentHero.superhero}}</small>
+</h1>
+<mat-divider class="mb-2"></mat-divider>
+<div class="grid">
+  <div class="col-12 sm:col-6">
+  <mat-card>
+    <mat-card-content>
+      <form class="grid"
+      [formGroup]="heroForm"
+      (ngSubmit)="onSubmit()">
+
+        <mat-form-field class="col-12 sm:col-6">
+          <mat-label>Super heroe</mat-label>
+          <input
+          type="text"
+          matInput
+          required
+          formControlName="superhero"
+          >
+        </mat-form-field>
+        <mat-form-field class="col-12 sm:col-6">
+          <mat-label>Alter ego</mat-label>
+          <input
+          type="text"
+          matInput
+          required
+          formControlName="alter_ego"
+          >
+        </mat-form-field>
+        <mat-form-field class="col-12">
+          <mat-label>Primera aparicion</mat-label>
+          <input
+          type="text"
+          matInput
+          formControlName="first_appearance"
+          >
+        </mat-form-field>
+        <mat-form-field class="col-12">
+          <mat-label>Personajes</mat-label>
+          <input
+          required
+          type="text"
+          matInput
+          formControlName="characters"
+          >
+        </mat-form-field>
+        <mat-form-field class="col-12">
+          <mat-label>Creador</mat-label>
+          <mat-select required
+          formControlName="publisher">
+            <mat-option
+            *ngFor="let publisher of publishers"
+            value="{{ publisher.id }}">
+            {{ publisher.desc }}
+          </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="col-12">
+          <mat-label>Imagen Alternativa</mat-label>
+          <input
+          type="text"
+          matInput
+          formControlName="alt_img"
+          />
+        </mat-form-field>
+
+<!-- LOS BOTONES TIENEN QUE ESTAR DENTRO DEL FORMULARIO -->
+        <div class="flex justify-content-between">
+          <button mat-flat-button color="warn"
+          type="button"
+          *ngIf="currentHero.id"
+          (click)="onDeleteHero()">Borrar</button>
+          <button mat-flat-button
+          color="primary"
+          type="submit"
+          [disabled]="!heroForm.valid">Guardar</button>
+          <!-- El boton esta desactivado si heroForm.valid es false -->
+        </div>
+
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="col-12 sm:col-6">
+  <mat-card>
+    <img [src]="currentHero | heroImage"
+    alt="hero Image" mat-card-image
+    crossorigin="anonymous">
+  </mat-card>
+</div>
+</div>
+
+<!-- <pre>
+  {{currentHero|json}}
+</pre>
+<pre>{{ currentHero.alt_img }}</pre> -->

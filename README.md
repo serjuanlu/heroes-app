@@ -5,6 +5,8 @@
 2. Ejecutar ```npm install```
 3. Levantar Backend ```npm run backend```
 4. Ejecutar la pp ```npm start``` o ```ng serve -o```
+5. Iniciar el json server con ```json-server --watch data/db.json```
+
 
 
 # 9.2 Se crea la interfaz heroe

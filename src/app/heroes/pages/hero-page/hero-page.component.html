@@ -1,1 +1,8 @@
-<p>hero-page works!</p>
+<!-- Como ya tenemos el routing en el componente,
+ solo hace falta darle la ruta de la lista de heroes al boton -->
+<button mat-fab extended [routerLink]="['/heroes']">
+  <mat-icon>arrow_back</mat-icon>
+  Volver a heroes
+</button>
+<!-- Vamos a mostrar el heroe concreto con algo de padding -->
+<h1 style="padding: 1em;">{{hero?.superhero}} page works!</h1>
