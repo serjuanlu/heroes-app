@@ -30,7 +30,7 @@ export class AuthService {
       // Buscamos el usuario en el json-server
       tap(user=>this.user=user),
       // guardamos el user en memoria local
-      tap(user=>localStorage.setItem('token', user.id))
+      tap(user=>localStorage.setItem('token', String(user.id)))
     );
   }
 
@@ -49,7 +49,7 @@ export class AuthService {
     .pipe(
       tap(user=>this.user=user),
       map(user=>!!user),
-      catchError(err=>of(false))
+      catchError(err => of(false))
     )
   }
 }
